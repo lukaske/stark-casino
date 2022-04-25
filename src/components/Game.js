@@ -117,7 +117,8 @@ export function Game(props) {
     const [isLoaded, setIsLoaded] = useState(false);
     const [isPageLoaded, setIsPageLoaded] = useState(false); //this helps
     const [speeds, setSpeeds] = useState(props.speeds)
-    const [triggerUpdate, setTriggerUpdate] = useState(props.trigger)
+    const [triggerUpdate, setTriggerUpdate] = useState(0)
+
     useEffect(() => {
         setIsLoaded(true);
     }, []);
@@ -131,7 +132,10 @@ export function Game(props) {
     useEffect(() => {
         console.log("got trigger")
         if (isPageLoaded && speeds && props.trigger != 0){
-            StartGame(speeds); 
+            if (props.trigger != triggerUpdate){
+                StartGame(speeds); 
+                setTriggerUpdate(props.trigger)
+            }
             console.log("got trigger2")
 
         }
