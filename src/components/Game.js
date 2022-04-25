@@ -34,7 +34,7 @@ export function Game(props) {
         var ctx = canvas.getContext('2d');
     
         const CANVAS_WIDTH = canvas.width; 
-        const CANVAS_HEIGHT = canvas.height; 
+        const CANVAS_HEIGHT = canvas.height;
     
         var positions; 
         var balls = [];
