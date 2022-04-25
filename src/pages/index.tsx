@@ -7,6 +7,8 @@ import { IncrementCounter } from '~/components/IncrementCounter'
 import { TransactionList } from '~/components/TransactionList'
 import { useCounterContract } from '~/hooks/counter'
 
+import { Game } from '~/components/Game'
+
 const Home: NextPage = () => {
   const { contract: counter } = useCounterContract()
 
@@ -25,6 +27,7 @@ const Home: NextPage = () => {
 
   return (
     <div>
+      <Game />
       <h2>Wallet</h2>
       <ConnectWallet />
       <h2>Counter Contract</h2>
