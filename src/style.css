@@ -6,7 +6,8 @@ h1, p, span, a {
 }
 
 body {
-    /*background-color: #101067;*/
+    background-color: #143f6b;
+    color: white;
 }
 
 h1 {

@@ -40,6 +40,5 @@ export function Timer() {
       >
         {renderTime}
       </CountdownCircleTimer>
-  
     )
 }

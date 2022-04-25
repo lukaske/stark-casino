@@ -283,20 +283,18 @@ export function Game(props) {
         positions = balls; 
         Update(); 
     }
-    
-
-
-
 
     return(
         <>
         <div>{props.trigger}</div>
         <canvas id="canvas" width="1200" height="700"></canvas>
+        <div style={{ display : "flex" }}>
         <p id="1"> </p>
         <p id="2"> </p>
         <p id="3"> </p>
         <p id="4"> </p>
         <p id="5"> </p>
+        </div>
         </>
     )     
 
