@@ -32,6 +32,14 @@
 .bet-button {
     display: block;
     text-align: center;
-    margin-left: 50%;
-    transform: translateX(-50%);
+    margin: auto;
+}
+
+.button-wrapper{
+    width: fit-content;
+}
+
+.interface-controls{
+    display:flex;
+    justify-content: center;
 }
