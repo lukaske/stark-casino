@@ -8,6 +8,8 @@ import { TransactionList } from '~/components/TransactionList'
 import { useCounterContract } from '~/hooks/counter'
 
 import { Game } from '~/components/Game'
+import { Canvas } from '~/components/Canvas'
+import { Interface } from '~/components/Interface'
 
 const Home: NextPage = () => {
   const { contract: counter } = useCounterContract()
@@ -27,15 +29,20 @@ const Home: NextPage = () => {
 
   return (
     <div>
-      <Game />
-      <h2>Wallet</h2>
       <ConnectWallet />
+      <Interface />
+      <Game />
+
+      <h2>Wallet</h2>
+
       <h2>Counter Contract</h2>
       <p>Address: {counter?.address}</p>
       <p>Value: {counterValue}</p>
+      
       <IncrementCounter />
       <h2>Recent Transactions</h2>
       <TransactionList />
+      <Canvas />
     </div>
   )
 }
