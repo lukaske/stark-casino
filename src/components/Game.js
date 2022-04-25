@@ -130,7 +130,7 @@ export function Game(props) {
 
     useEffect(() => {
         console.log("got trigger")
-        if (isPageLoaded && speeds && triggerUpdate != 0){
+        if (isPageLoaded && speeds && props.trigger != 0){
             StartGame(speeds); 
             console.log("got trigger2")
 
