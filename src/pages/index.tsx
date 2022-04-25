@@ -7,8 +7,9 @@ import { IncrementCounter } from '~/components/IncrementCounter'
 import { TransactionList } from '~/components/TransactionList'
 import { useCounterContract } from '~/hooks/counter'
 
+import { Text } from '@geist-ui/react'
+
 import { Game } from '~/components/Game'
-import { Canvas } from '~/components/Canvas'
 import { Interface } from '~/components/Interface'
 
 const Home: NextPage = () => {
@@ -29,6 +30,8 @@ const Home: NextPage = () => {
 
   return (
     <div>
+      <h1>Stark casino</h1>
+      
       <ConnectWallet />
       <Interface />
       <Game />

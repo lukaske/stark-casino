@@ -23,7 +23,7 @@ export function Interface(props) {
     const canvasRef = createRef();
     
     useEffect(() => {
-        let animals = ["dog", "cat", "dinosaur", "ape", "rose"];
+        let animals = ["box", "cross", "circle", "star", "triangle"];
         setAnimal(animals[Math.floor(Math.random()*animals.length)]);
     }, [])
     
@@ -32,7 +32,7 @@ export function Interface(props) {
         <div classNacreateRefme="wrapper">
             <div className="ui-wrapper">
                 <div className="input-component">
-                <Select placeholder="Choose your horse!" onChange={(val) => setHorseNum(val) }>
+                <Select placeholder="Choose your ball!" onChange={(val) => setHorseNum(val) }>
                     <Select.Option value="1">Ball 1</Select.Option>
                     <Select.Option value="2">Ball 2</Select.Option>
                     <Select.Option value="3">Ball 3</Select.Option>
@@ -50,7 +50,7 @@ export function Interface(props) {
                 </div>
                 
                 <div className="input-component">
-                <span>Draw a picture of a <b>{animal}</b></span>
+                <span>Draw a <b>{animal}</b></span>
                 <div style={{border: "2px solid black"}}>
                 <CanvasDraw ref={canvasRef} canvasWidth={200} canvasHeight={200} brushRadius={3} lazyradius={0}/>
                 </div>
@@ -59,7 +59,7 @@ export function Interface(props) {
                 <Spacer h={.5} />
             </div>
 
-            <div className="interface-controls"><div className="button-wrapper"><Button onClick={() => placeBet(canvasRef, horseNum, bet)} className="bet-button" shadow type="secondary" scale={2}>Success</Button></div></div>
+            <div className="interface-controls"><div className="button-wrapper"><Button onClick={() => placeBet(canvasRef, horseNum, bet)} className="bet-button" shadow type="secondary" scale={2}>Bet now!</Button></div></div>
         </div>
   );
 }

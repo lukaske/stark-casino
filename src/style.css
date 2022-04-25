@@ -1,5 +1,18 @@
-.wrapper {
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap');
 
+h1, p, span, a {
+    font-family: 'Oxygen', sans-serif;
+    /*color: white;*/
+}
+
+body {
+    /*background-color: #101067;*/
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 40px;
 }
 
 .ui-wrapper {
