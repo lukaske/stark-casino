@@ -8,7 +8,7 @@ import { TransactionList } from '~/components/TransactionList'
 import { useCounterContract } from '~/hooks/counter'
 
 import { Text } from '@geist-ui/react'
-
+import {Timer} from '~/components/Timer'
 import { Game } from '~/components/Game'
 import { Interface } from '~/components/Interface'
 import { setServers } from 'dns'
@@ -51,7 +51,7 @@ const Home: NextPage = () => {
       ]}
       trigger={gameTrigger}
       />
-
+      <Timer></Timer>
       <h2>Wallet</h2>
 
       <h2>Counter Contract</h2>
