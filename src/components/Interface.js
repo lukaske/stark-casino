@@ -44,7 +44,7 @@ export function Interface(props) {
                 
                 <Spacer h={.5} />
             </div>
-            <Button className="bet-button" shadow type="secondary" scale={2}>Success</Button>
+            <div className="interface-controls"><div className="button-wrapper"><Button className="bet-button" shadow type="secondary" scale={2}>Success</Button></div></div>
         </div>
   );
 }
