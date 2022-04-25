@@ -42,7 +42,6 @@ const Home: NextPage = () => {
       <IncrementCounter />
       <h2>Recent Transactions</h2>
       <TransactionList />
-      <Canvas />
     </div>
   )
 }

@@ -43,3 +43,16 @@
     display:flex;
     justify-content: center;
 }
+
+#canvas {
+    display: block;
+    margin-top: 20px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+        
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-crisp-edges;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
