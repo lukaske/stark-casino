@@ -1,15 +1,16 @@
 import { useState, createRef } from "react"
-import { Input, Button, Spacer, Select } from '@geist-ui/react'
-import { Settings } from '@geist-ui/react-icons'
+import { Button, Spacer, Select } from '@geist-ui/react'
 import CanvasDraw from "react-canvas-draw";
+import { pedersen } from "../pedersen";
 
-function submitImage(canvasRef) {
+
+function placeBet(canvasRef) {
     let hash = require('object-hash')
     let secret = hash(canvasRef.current.getSaveData())
     console.log("secret: ", secret)
     canvasRef.current.clear()
+    console.log("pedersen: ", pedersen([100, 0]));
 }
-
 
 export function Interface(props) {
     const [horseNum, setHorseNum] = useState('1');
@@ -44,7 +45,7 @@ export function Interface(props) {
                 
                 <Spacer h={.5} />
             </div>
-            <Button className="bet-button" shadow type="secondary" scale={2}>Success</Button>
+            <Button onClick={() => placeBet(canvasRef)} className="bet-button" shadow type="secondary" scale={2}>Success</Button>
         </div>
   );
 }
