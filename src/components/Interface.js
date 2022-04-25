@@ -25,7 +25,7 @@ export function Interface(props) {
     useEffect(() => {
         let animals = ["dog", "cat", "dinosaur", "ape", "rose"];
         setAnimal(animals[Math.floor(Math.random()*animals.length)]);
-    })
+    }, [])
     
 
     return (
