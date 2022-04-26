@@ -1,1 +1,2 @@
 0x02011524482ba33bde62e31bbc2326fe83b7bea48e1703f2ae15c73e42aff5cd:artifacts/abis/contract.json:contract
+0x063e6a687a76ca34a4ae32465cfb8add4b01afc2195044000069ed2cac032f3f:artifacts/abis/ball_race.json:ball_race

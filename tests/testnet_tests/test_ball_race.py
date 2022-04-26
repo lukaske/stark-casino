@@ -18,6 +18,7 @@ from starkware.starknet.public.abi import get_selector_from_name, get_storage_va
 from starknet_py.net.client import Client
 from starknet_py.net.account.account_client import AccountClient, KeyPair
 from starknet_py.contract import Contract
+from starkware.cairo.common.hash_state import pedersen_hash
 
 
 abis_path = os.path.join(
@@ -35,7 +36,12 @@ ball_race_abi = Path(os.path.join(
     abis_path, "ball_race.json")).read_text()
 ball_race_abi = ast.literal_eval(ball_race_abi)
 
-ball_race_address = "0x06da2ddb9ae628cd405c5050466ae70abb36a1071fdc00987c9b19a19bc471de"
+ball_race_address = "0x063e6a687a76ca34a4ae32465cfb8add4b01afc2195044000069ed2cac032f3f"
+
+owner_addr = "0x05e8e3ffb034bb955aa73bc58d47f8126e9664c5398d0307fbd6dc54f10d867c"
+
+
+OWNER_PRIV_KEY = int(config('OWNER_PRIV_KEY'))
 
 
 @dataclass
@@ -61,6 +67,8 @@ async def contract_factory():
 
     local_network_client = Client("testnet")
 
+    acc
+
     ball_race_contract = Contract(address=ball_race_address, abi=ball_race_abi,
                                   client=local_network_client)
 
@@ -74,11 +82,9 @@ async def test_main_logic(contract_factory):
 
 @pytest.mark.asyncio
 async def test_set_config(contract_factory):
-    owner_client, main_oracle, transmitter_acc, ofc_aggregator = contract_factory
+    ball_race_contract = contract_factory
 
-    encoded_config = 1234567898765
-
-    invocation = await ofc_aggregator.functions["create_race"].invoke(
+    invocation = await ball_race_contract.functions["create_race"].invoke(
         100000000)
 
     res = await invocation.wait_for_acceptance()
@@ -92,12 +98,10 @@ async def test_set_config(contract_factory):
 async def test_transmit(contract_factory):
     owner_client, main_oracle, transmitter_acc, ofc_aggregator = contract_factory
 
-    # calldata = [int(rawReportContext, 16),
-    #             int(rawObservers[:60], 16),
-    #             observations1,
-    #             r_sigs1,
-    #             s_sigs1,
-    #             "0x" + "00" * 32]
+    s = 12345
+    comm = pedersen_hash(s, 0)
+
+    calldata = []
 
     # invocation = await transmitter.send_transaction(
     #     account=transmitter_acc,
