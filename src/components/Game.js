@@ -6,9 +6,11 @@ export function Game(props) {
     const [isPageLoaded, setIsPageLoaded] = useState(false); //this helps
     const [speeds, setSpeeds] = useState(props.speeds)
     const [triggerUpdate, setTriggerUpdate] = useState(0)
+    var startAnimation = false; 
 
     useEffect(() => {
         setIsLoaded(true);
+        StartGame(speeds)
     }, []);
     
     useEffect(() => {
@@ -21,6 +23,7 @@ export function Game(props) {
         console.log("got trigger")
         if (isPageLoaded && speeds && props.trigger != 0){
             if (props.trigger != triggerUpdate){
+                startAnimation = true
                 StartGame(speeds); 
                 setTriggerUpdate(props.trigger)
             }
@@ -29,15 +32,20 @@ export function Game(props) {
         }
     }, [props])
     
+
     function StartGame(speeds){    
         var canvas = document.getElementById('canvas');
         var ctx = canvas.getContext('2d');
     
-        var starknet2 = new Image();
+        let starknet2 = new Image();
         starknet2.src = 'https://i.ibb.co/7R7Qb4f/stark.png';
+        starknet2.onload = function() {
+            ctx.drawImage(starknet2, CANVAS_WIDTH/2-75, CANVAS_HEIGHT/2-75, 150, 150);
+    
+          };
     
         const CANVAS_WIDTH = canvas.width; 
-        const CANVAS_HEIGHT = canvas.height;
+        const CANVAS_HEIGHT = canvas.height; 
     
      
         var positions; 
@@ -278,11 +286,15 @@ export function Game(props) {
             }
             
             // balls[0].animate(); 
-            requestAnimationFrame(Update); 
+            if (startAnimation){
+                requestAnimationFrame(Update); 
+            }
+            
         }
         positions = balls; 
         Update(); 
     }
+    
 
     return(
         <>

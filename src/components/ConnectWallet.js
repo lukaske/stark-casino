@@ -10,5 +10,5 @@ export function ConnectWallet() {
     return <p style={{ textAlign: "center" }}><b>Wallet connected:</b> {account}</p>
   }
 
-  return <Button style={{marginTop: "30px", marginLeft: "50%", transform: "translateX(-50%)"}} auto type={"primary"} scale={1} onClick={() => connect(new InjectedConnector())}>Connect wallet!</Button>
+  return <Button style={{marginTop: "30px", marginLeft: "50%", transform: "translateX(-50%)"}} auto type={"warning-light"} scale={1} onClick={() => connect(new InjectedConnector())}>Connect wallet!</Button>
 }

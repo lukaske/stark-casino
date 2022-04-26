@@ -98,7 +98,7 @@ export function Interface(props) {
 
             <div className="interface-controls"><div className="button-wrapper"><Button onClick={
                 () => placeBet(canvasRef, horseNum, bet, account, bet_contract)
-                } className="bet-button" shadow type="secondary" scale={2}>Bet now!</Button></div></div>
+                } className="bet-button" shadow type="error-light" scale={2}>Bet now!</Button></div></div>
         </div>
   );
 }

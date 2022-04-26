@@ -35,7 +35,7 @@ export function Timer() {
         <CountdownCircleTimer
         isPlaying
         duration={30}
-        colors={['#000000']}
+        colors={['#FEB139']}
         onComplete={triggerTransaction}
       >
         {renderTime}
