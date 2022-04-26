@@ -29,3 +29,22 @@ async def test_increase_balance():
     # Check the result of get_balance().
     execution_info = await contract.get_balance().call()
     assert execution_info.result == (30,)
+
+
+# The testing library uses python's asyncio. So the following
+# decorator and the ``async`` keyword are needed.
+@pytest.mark.asyncio
+async def test_hash():
+    """Test increase_balance method."""
+    # Create a new Starknet class that simulates the StarkNet
+    # system.
+    starknet = await Starknet.empty()
+
+    # Deploy the contract.
+    contract = await starknet.deploy(
+        source=CONTRACT_FILE,
+    )
+
+    # Invoke increase_balance() twice.
+    res = await contract.test_hash().call()
+    print(res.result)

@@ -1,0 +1,215 @@
+[
+    {
+        "members": [
+            {
+                "name": "low",
+                "offset": 0,
+                "type": "felt"
+            },
+            {
+                "name": "high",
+                "offset": 1,
+                "type": "felt"
+            }
+        ],
+        "name": "Uint256",
+        "size": 2,
+        "type": "struct"
+    },
+    {
+        "data": [
+            {
+                "name": "from_",
+                "type": "felt"
+            },
+            {
+                "name": "to",
+                "type": "felt"
+            },
+            {
+                "name": "value",
+                "type": "Uint256"
+            }
+        ],
+        "keys": [],
+        "name": "Transfer",
+        "type": "event"
+    },
+    {
+        "data": [
+            {
+                "name": "owner",
+                "type": "felt"
+            },
+            {
+                "name": "spender",
+                "type": "felt"
+            },
+            {
+                "name": "value",
+                "type": "Uint256"
+            }
+        ],
+        "keys": [],
+        "name": "Approval",
+        "type": "event"
+    },
+    {
+        "inputs": [
+            {
+                "name": "secrets_len",
+                "type": "felt"
+            },
+            {
+                "name": "secrets",
+                "type": "felt*"
+            },
+            {
+                "name": "addresses_len",
+                "type": "felt"
+            },
+            {
+                "name": "addresses",
+                "type": "felt*"
+            }
+        ],
+        "name": "generate_randomness",
+        "outputs": [
+            {
+                "name": "randomness",
+                "type": "felt"
+            }
+        ],
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "test_num_comm",
+        "outputs": [
+            {
+                "name": "res",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "idx",
+                "type": "felt"
+            }
+        ],
+        "name": "test_commiters",
+        "outputs": [
+            {
+                "name": "res",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "addr",
+                "type": "felt"
+            }
+        ],
+        "name": "test_commitments",
+        "outputs": [
+            {
+                "name": "res",
+                "type": "felt"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "owner",
+                "type": "felt"
+            }
+        ],
+        "name": "constructor",
+        "outputs": [],
+        "type": "constructor"
+    },
+    {
+        "inputs": [
+            {
+                "name": "race_time",
+                "type": "felt"
+            }
+        ],
+        "name": "create_race",
+        "outputs": [],
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "race_idx",
+                "type": "felt"
+            },
+            {
+                "name": "ball_index",
+                "type": "felt"
+            },
+            {
+                "name": "commitment",
+                "type": "felt"
+            }
+        ],
+        "name": "place_bet",
+        "outputs": [],
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "race_idx",
+                "type": "felt"
+            }
+        ],
+        "name": "lock_betting",
+        "outputs": [],
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "name": "race_idx",
+                "type": "felt"
+            },
+            {
+                "name": "secrets_len",
+                "type": "felt"
+            },
+            {
+                "name": "secrets",
+                "type": "felt*"
+            },
+            {
+                "name": "addresses_len",
+                "type": "felt"
+            },
+            {
+                "name": "addresses",
+                "type": "felt*"
+            }
+        ],
+        "name": "eveluate_race",
+        "outputs": [
+            {
+                "name": "winner",
+                "type": "felt"
+            }
+        ],
+        "type": "function"
+    }
+]

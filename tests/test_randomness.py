@@ -131,8 +131,16 @@ async def test_commit_reveal(contract_factory):
 async def verify_commits(secrets, rand_contract):
 
     addresses = [ac.contract_address for ac in accounts]
-    secrets[0] = secrets[0] + 1
+    secrets[5] = secrets[5] + 1
 
     res = await rand_contract.verify_commitments(secrets, addresses).call()
 
     print("Commits verified successfuly: ", res.result)
+
+
+# define a random shuffle function based on seed
+def shuffle(seed, arr):
+    # shuffle the array
+    for i in range(len(arr)):
+        j = i + seed % (len(arr) - i)
+        arr[i], arr[j] = arr[j], arr[i]
