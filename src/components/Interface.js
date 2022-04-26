@@ -70,11 +70,11 @@ export function Interface(props) {
             <div className="ui-wrapper">
                 <div className="input-component">
                 <Select placeholder="Choose your ball!" onChange={(val) => setHorseNum(val) }>
-                    <Select.Option value="1">Ball 1</Select.Option>
-                    <Select.Option value="2">Ball 2</Select.Option>
-                    <Select.Option value="3">Ball 3</Select.Option>
-                    <Select.Option value="4">Ball 4</Select.Option>
-                    <Select.Option value="5">Ball 5</Select.Option>
+                    <Select.Option value="0">Blue</Select.Option>
+                    <Select.Option value="1">White</Select.Option>
+                    <Select.Option value="2">Red</Select.Option>
+                    <Select.Option value="3">Yelllow</Select.Option>
+                    <Select.Option value="4">Green</Select.Option>
                 </Select>
                 </div>
 
@@ -88,7 +88,7 @@ export function Interface(props) {
                 
                 <div className="input-component">
                 <span>Draw a <b>{animal}</b></span>
-                <div style={{border: "2px solid black"}}>
+                <div style={{ borderRadius: "5px" }}>
                 <CanvasDraw ref={canvasRef} canvasWidth={200} canvasHeight={200} brushRadius={3} lazyradius={0}/>
                 </div>
                 </div>
