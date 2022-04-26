@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Skip to content
 Search or jump to…
 Pull requests
@@ -27,6 +28,8 @@ Latest commit 07fa23c 3 hours ago
 @galgantar@Snojj25
 41 lines (30 sloc)  611 Bytes
   
+=======
+>>>>>>> 51b9ec669e291447aa1b4d0c7ddd734e6052f8a7
 # Logs
 logs
 *.log
@@ -68,16 +71,3 @@ jspm_packages
 
 *.pyc
 backend/__pycache__
-© 2022 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-Loading complete

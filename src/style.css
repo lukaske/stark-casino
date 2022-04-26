@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap');
+
+h1, p, span, a {
+    font-family: 'Oxygen', sans-serif;
+    /*color: white;*/
+}
+
+body {
+    background-color: #143f6b;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Oxygen', sans-serif;
+    font-size: 40px;
+}
+
+.ui-wrapper {
+    padding: 30px;
+    display: flex;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    justify-content: center;
+    align-items: center;
+}
+
+.input-component {
+    margin: 0 20px;
+}
+
+.select span span {
+    font-size: 20px !important;
+}
+
+.canvas-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+  
+#canvas {
+    border-radius: 10px;
+}
+
+.bet-button {
+    display: block;
+    text-align: center;
+    margin: auto;
+}
+
+.button-wrapper{
+    width: fit-content;
+}
+
+.interface-controls{
+    display:flex;
+    justify-content: center;
+}
+
+#canvas {
+    /* border: 2px solid #000; */
+    display: block;
+    margin-top: 20px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    background-color: #143F6B;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-crisp-edges;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+
+}
